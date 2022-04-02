@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+@keyframes animateColor{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+body{
+    background: linear-gradient(68.15deg ,#042104 16.62%, #308a33 85.61%);
+}
+
+    /*Estilo de fundo inicial*/
+.infinito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 86.9vh;
+}
+
+.infinito .container{
+    display: flex;
+    animation: animateColor 8s linear infinite;
+}
+.infinito .container .circle{
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin: 0 -7.5px;
+}
+.infinito .container .circle span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+    /* 360/20 = 18deg */
+}
+.infinito .container .circle span::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: calc(50% - 7.5px);
+    width: 15px;
+    height: 15px;
+    background: #00ff0a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 
+    0 0 40px #00ff0a, 0 0 60px #00ff0a, 0 0 80px #00ff0a,
+    0 0 100px #00ff0a;
+    transform: scale(0.1);
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animate{
+    0%{
+        transform: scale(1);
+    }
+    50%,100%{
+        transform: scale(0.1);
+    }
+}
+.infinito .container .circle:nth-child(2){
+    transform: rotate(-180deg);
+}
+.infinito .container .circle:nth-child(2) span::before{
+    animation-delay: calc(-0.1s * var(--i));
+}
+
+
+/*Lado direito*/
+
+#lado-direito{
+    float: right;
+    width: 50%;
+    min-height: 86.9vh;;
+}
+#imagem1 img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 25%;
+    border-style: groove;
+    border-color: black;
+}
+/*lado esquerdo*/
+
+#lado-esquerdo{
+    margin-top: 2%;
+    float: left;
+    width: 50%;
+    min-height: 86.9vh;
+    
+}
+.texto{
+    margin-top: 28%;
+    text-align: center;
+    padding-right: 40px;
+}
+.texto h1{
+    color: white;
+    padding-bottom: 40px;
+    text-align: center;
+}
+#lado-direito p{
+    color: white
+   
+}
+
+/*menu header*/
+#menu-h{
+    padding: 0;
+    top: 0;
+    width: 100%;
+}
+
+#menu-h ul li{
+    display: inline;
+}
+
+#menu-h ul li a{
+    display: inline;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+#menu-h ul li a:hover{
+    display: inline;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: purple;
+    transition: .3s;
+} 
+
+/*rodape*/
+
+#botao-social{
+    position: relative;
+    margin-right: 50px;
+    float: right; 
+}
